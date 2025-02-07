@@ -1,4 +1,3 @@
 ### hi.py
 
-[hey](#hipy)
-```
+[hey](hi.py)
