@@ -1,4 +1,4 @@
 ### hi.py
 
-```python
-# hi.py
+[hey](#hipy)
+```
