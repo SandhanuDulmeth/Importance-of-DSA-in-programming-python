@@ -1,4 +1,4 @@
-# Step 1: Create a nested list (a list of lists)
+# Step 1 : Create a nested list (a list of lists)
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
