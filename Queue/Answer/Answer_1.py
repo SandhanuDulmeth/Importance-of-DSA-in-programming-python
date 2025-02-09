@@ -1,25 +1,17 @@
-class Queue:
-    def __init__(self):
-        self.items = []
+# Step 1: Import the deque class from collections.
+from collections import deque
 
-    def enqueue(self, item):
-        self.items.append(item)
+# Step 2: Create an empty queue using deque.
+queue = deque()
 
-    def dequeue(self):
-        if self.is_empty():
-            raise IndexError("Dequeue from empty queue")
-        return self.items.pop(0)
+# Step 3: Enqueue items using the append() method.
+queue.append(10)
+queue.append(20)
+queue.append(30)
 
-    def is_empty(self):
-        return len(self.items) == 0
+# Step 4: Dequeue one item using the popleft() method.
+removed_item = queue.popleft()
 
-    def size(self):
-        return len(self.items)
-
-# Test
-q = Queue()
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-print(q.dequeue())  # Output: 1
-print(q.dequeue())  # Output: 2
+# Step 5: Print the dequeued item and the current state of the queue.
+print("Removed item:", removed_item)
+print("Current queue:", list(queue))

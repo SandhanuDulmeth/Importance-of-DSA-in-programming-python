@@ -1,28 +1,12 @@
-import threading
-import queue
-import time
+# Step 1: Import deque.
+from collections import deque
 
-def producer(q):
-    for i in range(5):
-        print(f"Producing {i}")
-        q.put(i)
-        time.sleep(1)
+# Step 2: Create a queue and add items.
+queue = deque([100, 200, 300, 400])
 
-def consumer(q):
-    while True:
-        item = q.get()
-        if item is None:
-            break
-        print(f"Consuming {item}")
-        q.task_done()
+# Step 3: Clear all elements from the queue using clear().
+queue.clear()
 
-q = queue.Queue()
-producer_thread = threading.Thread(target=producer, args=(q,))
-consumer_thread = threading.Thread(target=consumer, args=(q,))
-
-producer_thread.start()
-consumer_thread.start()
-
-producer_thread.join()
-q.put(None)  # Signal consumer to stop
-consumer_thread.join()
+# Step 4: Print the cleared queue and verify it is empty.
+print("Queue after clearing:", list(queue))
+print("Is the queue empty?", not queue)

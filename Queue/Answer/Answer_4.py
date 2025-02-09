@@ -1,37 +1,17 @@
-class Queue:
-    def __init__(self):
-        self.items = []
+# Step 1: Import deque.
+from collections import deque
 
-    def enqueue(self, item):
-        self.items.append(item)
+# Step 2: Create and populate the queue with items.
+queue = deque([1, 2, 3, 4, 5])
 
-    def dequeue(self):
-        if self.is_empty():
-            raise IndexError("Dequeue from empty queue")
-        return self.items.pop(0)
+# Step 3: Dequeue two items using popleft().
+first_removed = queue.popleft()
+second_removed = queue.popleft()
 
-    def is_empty(self):
-        return len(self.items) == 0
+# Step 4: Enqueue two more items.
+queue.append(6)
+queue.append(7)
 
-    def size(self):
-        return len(self.items)
-
-def is_palindrome(queue):
-    stack = []
-    for _ in range(queue.size()):
-        item = queue.dequeue()
-        stack.append(item)
-        queue.enqueue(item)
-    for _ in range(queue.size()):
-        item = queue.dequeue()
-        if item != stack.pop():
-            return False
-        queue.enqueue(item)
-    return True
-
-# Test
-q = Queue()
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(1)
-print(is_palindrome(q))  # Output: True
+# Step 5: Print the removed items and the updated queue.
+print("Removed items:", first_removed, second_removed)
+print("Updated queue:", list(queue))

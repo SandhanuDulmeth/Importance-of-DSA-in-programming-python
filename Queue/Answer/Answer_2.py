@@ -1,24 +1,16 @@
-class QueueUnderflowError(Exception):
-    pass
+# Step 1: Import deque from collections.
+from collections import deque
 
-class Queue:
-    def __init__(self):
-        self.items = []
+# Step 2: Create an empty queue.
+queue = deque()
 
-    def enqueue(self, item):
-        self.items.append(item)
+# Step 3: Check if the queue is empty and print a message.
+if not queue:
+    print("The queue is empty.")
 
-    def dequeue(self):
-        if self.is_empty():
-            raise QueueUnderflowError("Queue is empty")
-        return self.items.pop(0)
+# Step 4: Enqueue an item.
+queue.append("First Item")
 
-    def is_empty(self):
-        return len(self.items) == 0
-
-# Test
-q = Queue()
-try:
-    q.dequeue()
-except QueueUnderflowError as e:
-    print(e)  # Output: Queue is empty
+# Step 5: Check again and print that the queue is not empty, along with its content.
+if queue:
+    print("The queue is not empty:", list(queue))

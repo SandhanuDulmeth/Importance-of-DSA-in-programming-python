@@ -1,33 +1,17 @@
+# Step 1: Import deque.
 from collections import deque
 
-class Queue:
-    def __init__(self):
-        self.items = deque()
+# Step 2: Create a queue with tasks (simulated as strings).
+tasks = deque(["Task1", "Task2", "Task3", "Task4"])
 
-    def enqueue(self, item):
-        self.items.append(item)
-
-    def dequeue(self):
-        if self.is_empty():
-            raise IndexError("Dequeue from empty queue")
-        return self.items.popleft()
-
-    def is_empty(self):
-        return len(self.items) == 0
-
-    def reverse_first_k(self, k):
-        if k > len(self.items):
-            raise ValueError("k exceeds queue size")
-        temp = [self.dequeue() for _ in range(k)]
-        temp.reverse()
-        for item in temp:
-            self.enqueue(item)
-        for _ in range(len(self.items) - k):
-            self.enqueue(self.dequeue())
-
-# Test
-q = Queue()
-for i in [1, 2, 3, 4, 5]:
-    q.enqueue(i)
-q.reverse_first_k(3)
-print(list(q.items))  # Output: [3, 2, 1, 4, 5]
+# Step 3: Process tasks in a round robin fashion.
+for i in range(4):
+    # Dequeue the task at the front (simulate processing it).
+    current_task = tasks.popleft()
+    print(f"Processing {current_task}")
+    
+    # Step 4: After processing, re-add the task to the end of the queue.
+    tasks.append(current_task)
+    
+    # Step 5: Print the current order of tasks after rotation.
+    print("Queue after rotation:", list(tasks))

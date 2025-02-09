@@ -1,23 +1,14 @@
-class Queue:
-    def __init__(self):
-        self.stack1 = []
-        self.stack2 = []
+# Step 1: Import deque.
+from collections import deque
 
-    def enqueue(self, item):
-        self.stack1.append(item)
+# Step 2: Create a queue and enqueue several items.
+queue = deque(["x", "y", "z"])
 
-    def dequeue(self):
-        if not self.stack2:
-            while self.stack1:
-                self.stack2.append(self.stack1.pop())
-        if not self.stack2:
-            raise IndexError("Dequeue from empty queue")
-        return self.stack2.pop()
+# Step 3: Print the initial length of the queue.
+print("Initial length:", len(queue))
 
-# Test
-q = Queue()
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-print(q.dequeue())  # Output: 1
-print(q.dequeue())  # Output: 2
+# Step 4: Dequeue one item.
+queue.popleft()
+
+# Step 5: Print the length of the queue after removal.
+print("Length after one dequeue:", len(queue))

@@ -1,29 +1,14 @@
-class Queue:
-    def __init__(self):
-        self.items = []
+# Step 1: Import deque.
+from collections import deque
 
-    def enqueue(self, item):
-        self.items.append(item)
+# Step 2: Create a queue with initial items.
+queue = deque(["apple", "banana", "cherry"])
 
-    def dequeue(self):
-        if self.is_empty():
-            raise IndexError("Dequeue from empty queue")
-        return self.items.pop(0)
+# Step 3: Access the front element without removing it.
+front_item = queue[0]
 
-    def is_empty(self):
-        return len(self.items) == 0
+# Step 4: Print the front element.
+print("Front item:", front_item)
 
-def reverse_queue(queue):
-    stack = []
-    while not queue.is_empty():
-        stack.append(queue.dequeue())
-    while stack:
-        queue.enqueue(stack.pop())
-
-# Test
-q = Queue()
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-reverse_queue(q)
-print(q.items)  # Output: [3, 2, 1]
+# Step 5: Print the entire queue to show it remains unchanged.
+print("Queue:", list(queue))
