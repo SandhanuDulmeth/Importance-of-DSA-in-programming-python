@@ -10,6 +10,38 @@ class management_tree:
         child.parent = self
         self.children.append(child)
     
+    def get_level(self):
+        level = 0
+        p = self.parent
+        while p:
+            level += 1
+            p = p.parent
+        return level
+    
+    def print_tree(self,hierarchy):
+        if hierarchy == "name":
+         spaces = ' ' * self.get_level() * 3
+         prefix = spaces + "|__" if self.parent else ""
+         print(prefix + self.name)
+         if self.children:
+            for child in self.children:
+                child.print_tree(hierarchy)
+
+        elif hierarchy == "designation":
+            spaces = ' ' * self.get_level() * 3
+            prefix = spaces + "|__" if self.parent else ""
+            print(prefix + self.designation)
+            if self.children:
+                for child in self.children:
+                    child.print_tree(hierarchy)
+        elif hierarchy == "both":
+            spaces = ' ' * self.get_level() * 3
+            prefix = spaces + "|__" if self.parent else ""
+            print(prefix + self.name + " (" + self.designation + ")")
+            if self.children:
+                for child in self.children:
+                    child.print_tree(hierarchy)
+
 
 def build_management_tree():
     director = management_tree("Anika", "Director")
@@ -41,3 +73,10 @@ def build_management_tree():
     director.add_child(samir)
 
     return director
+
+
+if __name__ == '__main__':
+    root = build_management_tree()
+    root.print_tree("name")
+    root.print_tree("designation")
+    root.print_tree("both")

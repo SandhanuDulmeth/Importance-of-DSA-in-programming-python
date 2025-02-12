@@ -16,7 +16,7 @@ Anika (Director)
          |__Nia (Frontend Lead)
       |__Rehan (Cybersecurity Manager)
 ```
-
+[Question 1 Answer](Answer/Answer_1.py)
 
 2. when i run this i want show like in below
 
@@ -68,7 +68,9 @@ Anika (Director)
       |__Rehan (Cybersecurity Manager)
 ```
 
-3. when i run this i want show like in below
+[Question 2 Answer](Answer/Answer_2.py)
+
+3. when i run this i want show like in below now add your code to the function
 
 ## run code
 ```python
@@ -116,3 +118,5 @@ Anika (Director)
          |__Nia (Frontend Lead)
       |__Rehan (Cybersecurity Manager)
 ```
+
+[Question 3 Answer](Answer/Answer_3.py)
