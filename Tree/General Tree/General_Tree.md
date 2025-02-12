@@ -1,7 +1,10 @@
 
-# Create this hierarchy using General Tree
+# Management Hierarchy General Tree
+## In this problem, you will create and manipulate a general tree to represent the management hierarchy of a software company. Follow the questions below and refer to the corresponding answer files for the code implementations.
 
-1. Below is the management hierarchy of a soft ware company.
+# 1. Build the Management Hierarchy Tree
+
+## Construct a general tree based on the following management hierarchy:
 
 ```mathematica
 Anika (Director)
@@ -16,11 +19,11 @@ Anika (Director)
          |__Nia (Frontend Lead)
       |__Rehan (Cybersecurity Manager)
 ```
-[Question 1 Answer](Answer/Answer_1.py)
+Refer to the [Question 1 Answer](Answer/Answer_1.py) for the solution.
 
-2. when i run this i want show like in below
+# 2. Print the Management Tree in Different Formats
 
-## run code
+## When you run the following code:
 ```python
 if __name__ == '__main__':
     root = build_management_tree()
@@ -29,7 +32,7 @@ if __name__ == '__main__':
     root.print_tree("both")
 ```
 
-## output
+## The expected output is:
 ```mathematica
 Anika
    |__Rohan
@@ -68,11 +71,11 @@ Anika (Director)
       |__Rehan (Cybersecurity Manager)
 ```
 
-[Question 2 Answer](Answer/Answer_2.py)
+Refer to the [Question 2 Answer](Answer/Answer_2.py) for the solution.
 
-3. when i run this i want show like in below now add your code to the function
+# 3. Print the Management Tree at Different Levels
 
-## run code
+## Enhance your code by adding functionality to print the tree up to a specified level. When you run the following code:
 ```python
 if __name__ == '__main__':
 
@@ -87,7 +90,7 @@ if __name__ == '__main__':
 ```
 
 
-## output
+## The expected output should be:
 ```mathematica
 Anika (Director)
 
@@ -119,4 +122,4 @@ Anika (Director)
       |__Rehan (Cybersecurity Manager)
 ```
 
-[Question 3 Answer](Answer/Answer_3.py)
+Refer to the [Question 3 Answer](Answer/Answer_3.py) for the solution.
