@@ -8,8 +8,6 @@
 
   ***
 
-### More About DAS 
 
-[Click Me !](https://github.com/stars/SandhanuDulmeth/lists/dsa)
 
 
